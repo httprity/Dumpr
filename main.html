@@ -20,7 +20,7 @@
         <div class="tellus">
             <img src="telluss.png"/>
         </div>
-        <button id="generateBtn" onclick="sendMessage()">Validate</a></button>
+        <button id="generateBtn" onclick="sendMessage()">Validate</button>
         <div class="enter">
         <textarea id="ideaInput" placeholder="Enter text..."></textarea>
         </div>
@@ -60,7 +60,7 @@
             const response= await    fetch('https://openrouter.ai/api/v1/chat/completions', {
                  method: 'POST',
                     headers: {
-                            Authorization: 'Bearer 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',
+                            Authorization: `Bearer ${process.env.API_KEY}`,
                             'HTTP-Referer': '<YOUR_SITE_URL>', // Optional. Site URL for rankings on openrouter.ai.
                             'X-Title': "<YOUR_SITE_NAME>", // Optional. Site title for rankings on openrouter.ai.
                             'Content-Type': 'application/json',
